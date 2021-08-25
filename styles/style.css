@@ -1,0 +1,213 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#realHeader {
+  position: relative;
+  height: 75px;
+  width: 100vw;
+  background-color: #ffffff;
+  border-bottom: 1px solid gray;
+  display: fixed;
+  align-items: center;
+  justify-content: center;
+}
+
+#realHeader {
+  z-index: -1;
+  opacity: 0;
+}
+
+#fakeHeader {
+  height: 75px;
+  position: fixed;
+  top: -75px;
+  opacity: 0;
+  transition: all 1s ease;
+  z-index: -1;
+}
+
+#searchBar,
+#footerMobile {
+  display: none;
+  transition: all 0.5s ease;
+}
+
+#searchBar {
+  position: fixed;
+  height: 45px;
+  width: 100%;
+  background-color: white;
+  top: 0px;
+  padding: 6px 15px;
+}
+#searchBar.hide {
+  top: -45px;
+}
+#searchBar input {
+  width: 100%;
+  background-color: #5f5f5f7a;
+  border-radius: 10px;
+}
+
+#footerMobile {
+  position: fixed;
+  bottom: 0px;
+  background-color: white;
+  width: 100%;
+  border-top: 1px solid rgba(40, 40, 40, 0.4);
+  justify-content: space-between;
+  padding: 0 15px;
+}
+#footerMobile.hide {
+  bottom: -45px;
+}
+#footerMobile .btn {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px;
+}
+#footerMobile .btn svg {
+  width: 24px;
+  height: 24px;
+}
+#footerMobile .btn svg path {
+  fill: #5f5f5f;
+}
+#footerMobile .btn svg.pinterest path {
+  fill: #e6001a;
+}
+
+#headerDesktop {
+  display: flex;
+  height: 75px;
+  transition: all 1s ease;
+}
+
+.desktopSearchBar {
+  background-image: url("https://image.flaticon.com/icons/png/512/622/622669.png");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 15px center;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+}
+.desktopSearchBar input {
+  padding: 5px 24px;
+  height: 45px;
+  width: 800px;
+  background-color: #b9b9b9;
+  border-radius: 30px;
+}
+.desktopSearchBar input:hover {
+  background-color: #dadada;
+}
+
+#headerDesktop {
+  height: 75px;
+  width: 100vw;
+  top: 0px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: #ffffff;
+  justify-content: center;
+  padding: 5px 15px;
+}
+#headerDesktop.hide {
+  top: -75px;
+}
+#headerDesktop .btn {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: #ffffff;
+  border-radius: 40px;
+}
+#headerDesktop .btn path:hover {
+  fill: #979797;
+}
+#headerDesktop .btn button {
+  font-family: cursive;
+  white-space: nowrap;
+  font-size: 16px;
+  color: black;
+  height: 40px;
+  min-width: 60px;
+  background-color: #c4c0c0;
+  border-radius: 25px;
+}
+#headerDesktop .btn button:hover {
+  background-color: #000000;
+  color: white;
+}
+#headerDesktop .btn svg {
+  width: 40px;
+  height: 40px;
+}
+#headerDesktop .btn svg path {
+  fill: #7a7979;
+}
+#headerDesktop .btn svg.pinterestDesktop path {
+  fill: #e6001a;
+}
+#headerDesktop btn:hover {
+  background-color: #494041;
+}
+
+#content {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  padding: 5px;
+}
+
+.column {
+  padding: 5px;
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+.column .element {
+  width: 100%;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+.column .element img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+@media (max-width: 375px) {
+  #content {
+    flex-flow: row wrap;
+  }
+
+  .column {
+    flex: 50%;
+  }
+
+  #searchBar,
+#footerMobile {
+    display: flex;
+    height: 45px;
+  }
+
+  #headerDesktop,
+#realHeader,
+#fakeHeader {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
